@@ -2,7 +2,9 @@ name: Build Docker Image
 
 on:
   workflow_dispatch:
-
+  repository_dispatch:
+    types: [manual-trigger]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
