@@ -16,6 +16,6 @@ Please refrain from contacting the original developers for support related to th
         image: ghcr.io/rj-d2/Q4D-docker:latest
         container_name: Q4D
         volumes:
-          - /path/to/appdata:/~/.Q4D
+          - /path/to/appdata:/root/.Q4D
         restart: unless-stopped
     ```
