@@ -1,4 +1,4 @@
-name: Check and Build Q4D
+name: Build q4d
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
     - name: Build and push Docker image
       if: env.new_version == 'true'
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/Q4D-docker:${{ env.current_version }} .
-        docker push ghcr.io/${{ github.repository_owner }}/Q4D-docker:${{ env.current_version }}
-        docker tag ghcr.io/${{ github.repository_owner }}/Q4D-docker:${{ env.current_version }} ghcr.io/${{ github.repository_owner }}/Q4D-docker:latest
-        docker push ghcr.io/${{ github.repository_owner }}/Q4D-docker:latest
+        docker build -t ghcr.io/${{ github.repository_owner }}/q4d-docker:${{ env.current_version }} .
+        docker push ghcr.io/${{ github.repository_owner }}/q4d-docker:${{ env.current_version }}
+        docker tag ghcr.io/${{ github.repository_owner }}/q4d-docker:${{ env.current_version }} ghcr.io/${{ github.repository_owner }}/q4d-docker:latest
+        docker push ghcr.io/${{ github.repository_owner }}/q4d-docker:latest
