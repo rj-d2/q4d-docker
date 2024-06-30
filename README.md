@@ -12,7 +12,6 @@ This repository provides an unofficial Docker image for the client side of [Queu
 ## Configuration
 
 1. **Edit Configuration Files**: Edit the following files to match your environment:
-    - `Q4Ddefines.sh`
     - `Q4Dconfig.sh`
     - `Q4Dclient.sh`
 
