@@ -8,4 +8,5 @@ RUN apk add --no-cache nano mosquitto-clients bash mosquitto lftp
 WORKDIR /root/.Q4D
 
 # Start command
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
+CMD ["bash", "-xv", "./ProcessEvent.sh"]
