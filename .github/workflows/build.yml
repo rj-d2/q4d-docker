@@ -2,9 +2,7 @@ name: Build Docker Image
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [manual-trigger]
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
+          repository: rj-d2/Q4D-docker
           token: ${{ secrets.GH_PAT }}
 
       - name: Set up Docker Buildx
