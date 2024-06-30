@@ -3,13 +3,15 @@
 # Associate Array, type code -> destination directory
 
 
-# LFTP Throttle, this would download 1 file at a time, with 4 segments a 3M = 12 MB/s
-readonly RATE=3M
-readonly SEGMENTS=4
+# LFTP Throttle, (optional)
+# this would download 1 file at a time, with 5 Segments with 10 MB/s = 50 MB/s max Download Speed
+
+readonly RATE=10M
+readonly SEGMENTS=5
 readonly PARALLEL=1
 
-# LFTP Login (Home->Seedbox) Values (alternatively use .netrc or set up ssh keys instead)
-readonly CREDS='YOUR_USERNAME'
+# LFTP Login  Your ssh username for the Seedbox, keep the :xyz for some reason it needs any password, even if ssh keys are already configured
+readonly CREDS='YOUR_USERNAME:xyz'
 
 # Your Server
 readonly HOST="YOUR_SEEDBOX_IP"
