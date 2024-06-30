@@ -1,8 +1,8 @@
 # Use the official Alpine image as the base
 FROM alpine:latest
 
-# Install nano, mosquitto_sub, bash, mosquitto, and lftp
-RUN apk add --no-cache nano mosquitto-clients bash mosquitto lftp
+# Install mosquitto, mosquitto_sub, lftp, bash, nano
+RUN apk add --no-cache mosquitto mosquitto-clients lftp bash nano
 
 # Set the working directory
 WORKDIR /root/.Q4D
