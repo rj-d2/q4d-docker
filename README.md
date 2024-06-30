@@ -1,4 +1,4 @@
-# Q4D-docker
+# Q4D-Docker
 
 **Unofficial Docker Image**
 
@@ -102,3 +102,29 @@ ssh USERNAME@SEEDBOX_IP
 
 This setup allows `lftp` to use the SSH key for accessing the seedbox, enabling secure and automated downloads.
 
+## Testing
+
+### Setting Execute Permissions
+
+Ensure the script files have execute permissions:
+
+```sh
+chmod 755 ~/.Q4D/*.sh  # On the server
+chmod 755 /mnt/user/appdata/Q4D/*.sh  # On unraid
+```
+
+### Initiating a Download
+
+On the server, use the following command to initiate a download:
+
+```sh
+~/.Q4D/Queue4Download.sh "TorrentName" Hash Category Tracker "FullPath"
+```
+
+#### Example:
+
+```sh
+~/.Q4D/Queue4Download.sh "linuxmint-21.3-cinnamon-64bit.iso" 5aa5483aee76df2eae84ca4109adbc0d0702ab46 Software udp://tracker.opentrackr.org:1337/announce "/home/USERNAME/files/torrents/Software/linuxmint-21.3-cinnamon-64bit.iso"
+```
+
+This command should start the download of the ISO on unraid and add the tags `QUEUED` and then `DONE` in your torrent client.
