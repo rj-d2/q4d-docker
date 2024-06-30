@@ -20,7 +20,6 @@ jobs:
         node-version: '20'
 
     - name: Log in to GitHub Container Registry
-      if: env.new_version == 'true'
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
@@ -28,7 +27,6 @@ jobs:
         password: ${{ secrets.GH_PAT }}
 
     - name: Build and push Docker image
-      if: env.new_version == 'true'
       run: |
         docker build -t ghcr.io/${{ github.repository_owner }}/q4d-docker:${{ env.current_version }} .
         docker push ghcr.io/${{ github.repository_owner }}/q4d-docker:${{ env.current_version }}
