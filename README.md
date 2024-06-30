@@ -102,6 +102,19 @@ ssh USERNAME@SEEDBOX_IP
 
 This setup allows `lftp` to use the SSH key for accessing the seedbox, enabling secure and automated downloads.
 
+## Verifying Mosquitto Connection
+
+To verify that the Docker Mosquitto is working and connected to the seedbox, you can check the Docker container logs. The log should show connection messages if Mosquitto is functioning correctly.
+
+1. **Show Docker Logs**: Use the following command to display the Docker logs:
+
+    ```sh
+    docker logs q4d
+    ```
+
+2. **Look for Connection Messages**: In the log output, look for messages indicating that Mosquitto has started and is connected to the seedbox.
+
+
 ## Testing
 
 ### Setting Execute Permissions
